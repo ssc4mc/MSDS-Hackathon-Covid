@@ -7,8 +7,7 @@ data <- filter(
   countriesAndTerritories =="United_States_of_America"|
     countriesAndTerritories =="United_Kingdom"|
     countriesAndTerritories == "South_Korea"|
-    countriesAndTerritories == "China" &
-    cases==1)
+    countriesAndTerritories == "China")
 
 ggplot(data, aes(x=dateRep, y=cases, group=countriesAndTerritories, color=countriesAndTerritories)) +
     geom_smooth(aes(color=countriesAndTerritories))+
@@ -16,4 +15,3 @@ ggplot(data, aes(x=dateRep, y=cases, group=countriesAndTerritories, color=countr
     ylab("Cases")+
     xlab("Date")+
     scale_y_continuous(trans = 'log10')
-   # scale_x_date()
